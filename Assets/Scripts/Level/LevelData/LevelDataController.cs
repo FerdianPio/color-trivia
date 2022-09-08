@@ -14,7 +14,7 @@ namespace ColorTrivia.LevelData
 
         private string[] levelList;
         private Button[] buttonList;
-        LevelDataModel[] levelDataModel = new LevelDataModel[5];
+        LevelDataModel[] levelDataModel;
 
         public void LoadLevelList()
         {
@@ -22,9 +22,10 @@ namespace ColorTrivia.LevelData
             InitLevelList();
         }
 
-        /*public LevelDataModel GetLevelList(LevelDataModel[] level)
+        /*public LevelDataModel[] GetLevelList()
         {
-            foreach()
+
+            return levelDataModel.;
         }*/
 
         public void InitLevelList()

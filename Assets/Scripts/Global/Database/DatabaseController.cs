@@ -49,6 +49,7 @@ namespace ColorTrivia.Database
             List<string> levelList = new List<string>();
             foreach (LevelStruct ls in levelStruct)
             {
+                if(ls.PackID.Equals(packID))
                 levelList.Add(ls.LevelID);
             }
             return levelList.ToArray();
