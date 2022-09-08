@@ -8,9 +8,23 @@ namespace ColorTrivia.Currency
     public class CurrencyController : MonoBehaviour
     {
         CurrencyModel currencyModel = new CurrencyModel();
+
+        public static CurrencyController instance;
+        private void Awake()
+        {
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            else
+            {
+                instance = this;
+            }
+        }
         void Start()
         {
-            
+            currencyModel.Coin = SaveDataController.instance.Coin;
         }
 
         public int GetCoin()

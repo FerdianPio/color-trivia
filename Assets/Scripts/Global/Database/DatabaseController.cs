@@ -8,6 +8,20 @@ namespace ColorTrivia.Database
     public class DatabaseController : MonoBehaviour
     {
         LevelStruct[] levelStruct = new LevelStruct[4];
+
+        public static DatabaseController instance;
+        private void Awake()
+        {
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            else
+            {
+                instance = this;
+            }
+        }
         public string[] GetPackList()
         {
             List<string> packList = new List<string>();

@@ -11,7 +11,20 @@ namespace ColorTrivia.SaveData
         public string[] CompletedPack;
         public string[] CompletedLevel;
         SaveDataModel saveDataModel = new SaveDataModel();
-        
+
+        public static SaveDataController instance;
+        private void Awake()
+        {
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            else
+            {
+                instance = this;
+            }
+        }
         public void Save()
         {
             saveDataModel.Coin = Coin;
