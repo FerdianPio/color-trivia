@@ -7,7 +7,7 @@ namespace ColorTrivia.Database
 {
     public class DatabaseController : MonoBehaviour
     {
-        LevelStruct[] levelStruct = new LevelStruct[4];
+        [SerializeField] private LevelStruct[] levelStruct = new LevelStruct[4];
 
         public static DatabaseController instance;
         private void Awake()
@@ -22,18 +22,26 @@ namespace ColorTrivia.Database
                 instance = this;
             }
         }
+
+        private void Start()
+        {
+            string[] test = GetPackList();
+            //Debug.Log(test[1]);
+            foreach (string s in test)
+            {
+                Debug.Log(s);
+            }
+
+        }
+
         public string[] GetPackList()
         {
             List<string> packList = new List<string>();
             foreach (LevelStruct ls in levelStruct)
             {
-                foreach (string s in packList)
-                {
-                    if (s.Equals(ls.PackID)) break;
-                }
                 packList.Add(ls.PackID);
             }
-            return packList.ToArray();
+            return packList.Distinct<string>().ToArray<string>();
         }
 
         public string[] GetLevelList(string packID)
@@ -59,14 +67,5 @@ namespace ColorTrivia.Database
         }
     }
 
-    public struct LevelStruct
-    {
-        public string LevelID;
-        public string PackID;
-        public string Question;
-        public string Hint;
-        public string[] Choice;
-        public int Answer;
-    }
 }
 
