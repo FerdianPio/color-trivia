@@ -22,6 +22,11 @@ namespace ColorTrivia.Currency
                 instance = this;
             }
         }
+
+        void OnEnable()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
         void Start()
         {
             currencyModel.Coin = SaveDataController.instance.Coin;

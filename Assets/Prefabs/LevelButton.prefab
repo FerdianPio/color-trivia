@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cd852d5f892084fb25a6909b7e9075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNameLabel: {fileID: 0}
+  levelNameLabel: {fileID: 4034919311964060048}
   selectButton: {fileID: 4034919310424955122}
   completeImage: {fileID: 0}
   levelID: 

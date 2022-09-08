@@ -22,6 +22,10 @@ namespace ColorTrivia.Database
                 instance = this;
             }
         }
+        void OnEnable()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
 
         private void Start()
         {
@@ -64,7 +68,7 @@ namespace ColorTrivia.Database
                     return ls;
                 }
             }
-            return levelStruct[0];
+            return null;
         }
     }
 

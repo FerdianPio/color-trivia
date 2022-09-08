@@ -19,6 +19,10 @@ namespace ColorTrivia.Analytic
                 instance = this;
             }
         }
+        void OnEnable()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
         public void TrackFinishLevel(string levelID)
         {
             Debug.Log(levelID);

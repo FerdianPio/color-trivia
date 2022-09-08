@@ -25,6 +25,10 @@ namespace ColorTrivia.SaveData
                 instance = this;
             }
         }
+        void OnEnable()
+        {
+            DontDestroyOnLoad(gameObject);    
+        }
         public void Save()
         {
             saveDataModel.Coin = Coin;
