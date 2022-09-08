@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace ColorTrivia.HomeLauncher
+namespace ColorTrivia.HomeScene
 {
     public class HomeLauncher : MonoBehaviour
     {
