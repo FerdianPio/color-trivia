@@ -28,11 +28,11 @@ namespace ColorTrivia.PackData
         public void InitPackList(/*PackDataModel[] pack*/)
         {
             buttonList = new Button[packList.Length];
-            foreach(string s in packList)
+            foreach (string s in packList)
             {
-                GameObject btn = Instantiate(selectButton.gameObject, packButtonParent.transform.position, Quaternion.identity,packButtonParent.transform);
+                GameObject btn = Instantiate(selectButton.gameObject, packButtonParent.transform.position, Quaternion.identity, packButtonParent.transform);
                 btn.GetComponent<PackDataView>().packName = s;
-                
+
                 //change button ui property
                 //btn.GetComponent<PackDataView>().
             }
