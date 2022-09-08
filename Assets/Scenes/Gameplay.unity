@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 557193106}
   - component: {fileID: 557193105}
   - component: {fileID: 557193104}
+  - component: {fileID: 557193107}
   m_Layer: 5
   m_Name: PackButton (2)
   m_TagString: Untagged
@@ -545,6 +546,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557193102}
   m_CullTransparentMesh: 1
+--- !u!114 &557193107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557193102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ba2a2ce1a6aec4aa6a025d6c4d8f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  answer: {fileID: 477740344}
 --- !u!1 &670986660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,7 +1153,7 @@ GameObject:
   - component: {fileID: 863821806}
   - component: {fileID: 863821807}
   m_Layer: 0
-  m_Name: LevelLauncher
+  m_Name: GameplayLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1168,11 +1183,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 863821804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 324e577697b9d874d939da731d287039, type: 3}
+  m_Script: {fileID: 11500000, guid: 316e4882cdc479b4ba9bf47d4fc310e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 1411869585}
-  levelDataController: {fileID: 1363082743}
+  quizController: {fileID: 1363082743}
 --- !u!1 &1043447870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1277,7 @@ GameObject:
   - component: {fileID: 1127930923}
   - component: {fileID: 1127930922}
   - component: {fileID: 1127930921}
+  - component: {fileID: 1127930924}
   m_Layer: 5
   m_Name: PackButton (1)
   m_TagString: Untagged
@@ -1372,6 +1388,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127930919}
   m_CullTransparentMesh: 1
+--- !u!114 &1127930924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127930919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ba2a2ce1a6aec4aa6a025d6c4d8f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  answer: {fileID: 856848204}
 --- !u!1 &1232671172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,7 +1710,7 @@ GameObject:
   - component: {fileID: 1363082742}
   - component: {fileID: 1363082743}
   m_Layer: 0
-  m_Name: LevelDataController
+  m_Name: QuizController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1710,11 +1740,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1363082740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfda30ada0a40ed458a61986eaaca074, type: 3}
+  m_Script: {fileID: 11500000, guid: f24fc846d7460b74fb9b785e50ae765d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectButton: {fileID: 4034919310424955122, guid: f5babc9ba48a93a45834d5232f30f54f, type: 3}
-  levelButtonParent: {fileID: 1988875295}
+  questionText: {fileID: 1353563118}
+  hintImage: {fileID: 682343050}
+  answerButton:
+  - {fileID: 6382899910870731476}
+  - {fileID: 1127930921}
+  - {fileID: 557193104}
+  - {fileID: 1769157996}
 --- !u!1 &1411869583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1884,7 @@ GameObject:
   - component: {fileID: 1769157998}
   - component: {fileID: 1769157997}
   - component: {fileID: 1769157996}
+  - component: {fileID: 1769157999}
   m_Layer: 5
   m_Name: PackButton (3)
   m_TagString: Untagged
@@ -1959,6 +1995,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769157994}
   m_CullTransparentMesh: 1
+--- !u!114 &1769157999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769157994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ba2a2ce1a6aec4aa6a025d6c4d8f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 3
+  answer: {fileID: 673665586}
 --- !u!1 &1978632868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,6 +2164,7 @@ GameObject:
   - component: {fileID: 6382899910870731478}
   - component: {fileID: 6382899910870731477}
   - component: {fileID: 6382899910870731476}
+  - component: {fileID: 6382899910870731479}
   m_Layer: 5
   m_Name: PackButton
   m_TagString: Untagged
@@ -2224,6 +2275,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6382899910870731474}
   m_CullTransparentMesh: 1
+--- !u!114 &6382899910870731479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6382899910870731474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ba2a2ce1a6aec4aa6a025d6c4d8f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  answer: {fileID: 6382899912435559350}
 --- !u!1 &6382899912435559348
 GameObject:
   m_ObjectHideFlags: 0

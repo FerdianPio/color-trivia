@@ -14,14 +14,14 @@ namespace ColorTrivia.LevelData
         [SerializeField] private Image completeImage;
 
         public LevelDataModel levelDataModel;
-        public string levelID;
+        //public string levelID;
 
         private void Start()
         {
             levelNameLabel.text = levelDataModel.LevelName;
             LevelLauncher levelLauncher = GameObject.Find("LevelLauncher").gameObject.GetComponent<LevelLauncher>();
             selectButton.onClick.RemoveAllListeners();
-            selectButton.onClick.AddListener(() => levelLauncher.SelectLevel(levelID));
+            selectButton.onClick.AddListener(() => levelLauncher.SelectLevel(levelDataModel.LevelID));
         }
     }
 
