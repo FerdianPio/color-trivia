@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using ColorTrivia.PackScene;
+using TMPro;
 
 namespace ColorTrivia.PackData
 {
     public class PackDataView : MonoBehaviour
     {
-        [SerializeField] private Text packNameLabel;
-        [SerializeField] private Text unlockCostLabel;
+        [SerializeField] private TMP_Text packNameLabel;
+        [SerializeField] private TMP_Text unlockCostLabel;
         [SerializeField] private Button selectButton;
         [SerializeField] private Button unlockButton;
         [SerializeField] private Image completeImage;
 
-        PackLauncher packLauncher;
-
-        public string packName;
+        public PackDataModel packDataModel;
         void Start()
         {
-            packLauncher = GameObject.Find("PackLauncher").gameObject.GetComponent<PackLauncher>();
+            PackLauncher packLauncher = GameObject.Find("PackLauncher").gameObject.GetComponent<PackLauncher>();
+            packNameLabel.text = packDataModel.PackName;
             selectButton.onClick.RemoveAllListeners();
-            selectButton.onClick.AddListener(()=>packLauncher.SelectPack(packName));
+            selectButton.onClick.AddListener(()=>packLauncher.SelectPack(packDataModel.PackID));
         }
 
 

@@ -135,12 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea44bf98be6002847b0159d2a57d9ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  packNameLabel: {fileID: 0}
+  packNameLabel: {fileID: 4034919311964060048}
   unlockCostLabel: {fileID: 0}
   selectButton: {fileID: 4034919310424955122}
   unlockButton: {fileID: 0}
   completeImage: {fileID: 0}
-  packName: 
+  packDataModel: {fileID: 0}
 --- !u!1 &4034919311964060050
 GameObject:
   m_ObjectHideFlags: 0

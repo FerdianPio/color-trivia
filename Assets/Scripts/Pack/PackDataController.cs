@@ -8,44 +8,30 @@ namespace ColorTrivia.PackData
 {
     public class PackDataController : MonoBehaviour
     {
-        [SerializeField] private Button selectButton;
+        [SerializeField] private GameObject selectButton;
         [SerializeField] private GameObject packButtonParent;
 
-        private Button[] buttonList;
-        private string[] packList;
+        private PackDataView[] buttonList;
+
+        public PackDataModel[] packDataModel;
 
         public void LoadPackList()
         {
-            packList = DatabaseController.instance.GetPackList();
-            InitPackList();
+            InitPackList(packDataModel);
         }
 
-        /*public PackDataModel[] GetPackDataModel()
+        public PackDataModel[] GetPackDataModel()
         {
+            return packDataModel;
+        }
 
-        }*/
-
-        public void InitPackList(/*PackDataModel[] pack*/)
+        public void InitPackList(PackDataModel[] pack)
         {
-            buttonList = new Button[packList.Length];
-            foreach (string s in packList)
+            foreach(PackDataModel pd in pack)
             {
-                GameObject btn = Instantiate(selectButton.gameObject, packButtonParent.transform.position, Quaternion.identity, packButtonParent.transform);
-                btn.GetComponent<PackDataView>().packName = s;
-
-                //change button ui property
-                //btn.GetComponent<PackDataView>().
+                GameObject go = Instantiate(selectButton, packButtonParent.transform.position, Quaternion.identity, packButtonParent.transform);
+                go.GetComponent<PackDataView>().packDataModel = pd;
             }
         }
     }
-
-    public class PackDataModel
-    {
-        public string PackID;
-        public string PackName;
-        public bool IsCompleted;
-        public bool IsUnlocked;
-        public int UnlockCost;
-    }
-
 }
