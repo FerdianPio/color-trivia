@@ -30,12 +30,6 @@ namespace ColorTrivia.Database
         private void Start()
         {
             string[] test = GetPackList();
-            //Debug.Log(test[1]);
-            foreach (string s in test)
-            {
-                Debug.Log(s);
-            }
-
         }
 
         public string[] GetPackList()
